@@ -18,7 +18,6 @@ if sys.version_info < (3, 0):
 
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 import re
 import ethnicolr
 import gender_guesser.detector as gender
@@ -30,16 +29,19 @@ class syllabusAnalyzer():
         self.df = None      # populated in loadData()
         self.outDf = None   # populated in addRaceGender()
 
-    def loadData(self):
-        """Loads data on each reading into a dataframe of names"""
-        
-        if not(os.path.exists(self.inFn)):
-            raise Exception('Cannot load input file {}. Does not exist.'.format(self.inFn))
+    def loadData(self, fileobject=None):
+        """Loads data on each reading into a dataframe of names
+           If fileobject is None, data is read from file with self.inFn
+           Otherwise, read from the file object"""
+        if fileobject is None:
+            if not(os.path.exists(self.inFn)):
+                raise Exception('Cannot load input file {}. Does not exist.'.format(self.inFn))
+            fileobject = self.inFn 
 
-        if self.inFn.endswith('.xlsx'):
-            df = pd.read_excel(self.inFn)
+        if self.inFn.endswith('.xlsx') or self.inFn.endswith('.xls'):
+            df = pd.read_excel(fileobject)
         elif self.inFn.endswith('.csv'):
-            df = pd.read_csv(self.inFn)
+            df = pd.read_csv(fileobject)
         else:
             raise Exception('Cannot load input file {}. Must be an .xlsx or .csv file'.format(self.inFn))
 
@@ -222,6 +224,8 @@ class jper_analysis():
         """Plots for paper"""
         if self.df is None:
             raise Exception('Need to load dataframe before running plotData')
+
+        import matplotlib.pyplot as plt
 
         dfh = self.df[self.df.N_authors>0]
         fig, axes = plt.subplots(1,2)

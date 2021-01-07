@@ -33,7 +33,7 @@ In both cases, authors' names must be comma-separated, e.g. `Agyeman, Julian`. A
 
 > Agyeman, Julian; Bullard, Robert; Evans, Bob** 2003. Just Sustainabilities: Development in an Unequal World. Cambridge, MA: MIT Press.
 
-Everything after the ** is ingored
+Everything after the ** is ignored
 
 ## Option 2
 `template2.csv` has one row for each author. The `readingid` column is an identifier for each reading. This allows multi-authored publications to be weighted appropriately. The (optional) `courseid` column enables you to compare different courses. If you just have one course, you can omit this. The `author` column is the author's name in (lastname, firstname) format. For example:
