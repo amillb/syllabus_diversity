@@ -1,0 +1,95 @@
+/* includes alternating gray and white with on-hover color */
+/* from https://stackoverflow.com/questions/50807744/apply-css-class-to-pandas-dataframe-using-to-html/50939211*/
+
+body {
+	width: 90%;
+	margin: auto;
+	padding: 1.5em 1% 20px 1%;
+	background: white;
+	color: black;
+	line-height: 130%;
+	font-family: arial, helvetica, verdana, tahoma, sans-serif;
+	text-align: left;
+}
+
+h1 {
+	color: #666;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #a0c80e;
+	font-size: 150%;
+	letter-spacing: -1px;
+}
+
+h2 {
+    margin: 0.5em 0 0.2em 0;
+    color: #666;
+    padding-bottom: 0px;
+    font-size: 120%;
+    letter-spacing: -1px;
+}
+
+li {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	list-style-type: none;
+}
+
+error {
+	padding-top: 7px;
+	padding-bottom: 7px;
+    list-style-type: none;
+    color:red;
+}
+
+link, visited {
+	color: #260;
+	text-decoration: none;
+}
+
+.collapsible {
+	color: #666;
+	cursor: pointer;
+	background-color: #f1f1f1;
+	padding: 12px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 120%;
+}
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+	background-color: #ccc;
+}
+  
+ /* Style the collapsible content. Note: hidden by default */
+.content {
+	padding: 1.5em 1% 20px 1%;
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+}
+
+.mystyle {
+    font-size: 11pt; 
+    font-family: Arial;
+    border-collapse: collapse; 
+    border: 1px solid silver;
+
+}
+
+.mystyle td, th {
+    padding: 5px;
+    text-align: center;
+}
+
+.mystyle tr:nth-child(even) {
+    background: #E0E0E0;
+}
+
+.mystyle tr:hover {
+    background: silver;
+    cursor: pointer;
+}
+

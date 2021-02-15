@@ -1,0 +1,81 @@
+<html>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css"/>
+    <head>
+        <title>Syllabus Analyzer</title>
+    </head>
+    <body>
+        <h1>Diversifying Course Readings</h1>
+        <li>Increasing the diversity of the authors whose works are assigned on course syllabi is one way that educators can support social justice goals. </li>
+        <li>University teaching and learning centers, such as those at 
+            <a href="https://provost.tufts.edu/celt/news/2019/07/17/how-can-i-use-my-syllabus-as-a-tool-for-inclusion/" target="_blank" rel="noopener noreferrer">Tufts</a> and 
+            <a href="https://cte.ku.edu/creating-inclusive-syllabus" target="_blank" rel="noopener noreferrer">Kansas</a>, 
+            encourage instructors to feature more diverse voices in course materials, 
+            often as part of a wider set of anti-racist teaching practices. Institutions such as <a href="https://blogs.soas.ac.uk/decolonisingsoas/" target="_blank" rel="noopener noreferrer">SOAS University of London</a>, 
+            meanwhile, have set up initiatives to help faculty revise reading lists 
+            to improve the representation of women and people of color. </li>
+        <li>Seeing diverse kinds of names on the syllabus may help underrepresented students see themselves as belonging 
+            in the scholarly traditions being taught—the privilege long held, if unconsciously, by white men. 
+            A diverse faculty improves learning outcomes and provides role models; 
+            a diverse syllabus could be expected to yield similar benefits. </li>
+        <h1>Analyze Your Own Syllabi</h1>
+        <li>This tool allows you to analyze the proportions of readings that you assign by women and people of color.
+            It uses US census and driver licensing records to estimate the probability that a name is associated with a given gender and race/ethnicity,
+            based on the <a href="https://github.com/lead-ratings/gender-guesser" target="_blank" rel="noopener noreferrer">gender_guesser</a> and <a href="https://ethnicolr.readthedocs.io" target="_blank" rel="noopener noreferrer">ethnicolr</a> packages.</li>
+        <li>Simply upload a spreadsheet with the list of authors or readings.
+            You can use one of the two provided templates: <a href="https://docs.google.com/uc?export=download&id=1RtKvT67ezinYsEpXKTBVwS0q2hJEH3df" target="_blank" rel="noopener noreferrer">template1.csv</a> or <a href="https://docs.google.com/uc?export=download&id=18Rw_5E2iVkRQBxDiZM_nxEB8bDmZnnav" target="_blank" rel="noopener noreferrer">template2.csv</a>.</li>
+        <li>This website does not retain any information that you upload.</li> 
+
+        <button type="button" class="collapsible">&#x25BC; Detailed instructions</button>
+        <div class="content">
+
+            <li>Authors' names must be comma-separated, e.g. Obama, Barack. Authors without a comma will be ignored as they are assumed to be an institutional author (e.g. United Nations).</li> 
+        <li>Both .csv and Excel (.xlsx) formats are accepted, but for Excel, only the first sheet will be used.</li>
+            <h2>Option 1</h2>
+            <li><a href="https://docs.google.com/uc?export=download&id=1RtKvT67ezinYsEpXKTBVwS0q2hJEH3df" target="_blank" rel="noopener noreferrer">template1.csv</a> has one row for each reading.</li>
+            <li>The (optional) <em>courseid</em> column enables you to compare results for different courses. It can be numeric or the name of a course. If you just have one course, you can omit this.</li>
+            <li>The <em>reading</em> column is a citation in the following format: a list of authors (last name, first name) separated by semicolons, with <em>**</em> after the last author. Everything after the ** is ignored.
+            For example: Agyeman, Julian; Bullard, Robert; Evans, Bob** 2003. Just Sustainabilities: Development in an Unequal World. Cambridge, MA: MIT Press.</li> 
+            
+            <h2>Option 2</h2>
+            <li><a href="https://docs.google.com/uc?export=download&id=18Rw_5E2iVkRQBxDiZM_nxEB8bDmZnnav" target="_blank" rel="noopener noreferrer">template2.csv</a> has one row for each author.</li>
+            <li>The <em>readingid</em> column is an identifier for each reading. This allows multi-authored publications to be weighted appropriately.</li>
+            <li>The (optional) <em>courseid</em> column enables you to compare different courses. If you just have one course, you can omit this.</li>   
+            <li>The <em>author</em> column is the author's name in (lastname, firstname) format. For example: Obama, Michelle.</li>  
+        </div>
+
+
+        <h2 style="text-align:center; font-size: 150%; font-weight: bold">Upload your file</h2>
+        <li></li>
+    <form style="text-align:center" method=post action="" enctype=multipart/form-data>
+      <input type=file name=file accept=".csv,.xls,.xlsx">
+      <input type=submit value=Upload>
+    </form>
+
+    {% if upload_error %}
+    <error><b>Error in file upload! Please check the format of your uploaded file and try again.</b></error>
+    {% endif %}
+    <li></li>
+    <h1>Questions? Comments?</h2>
+      <li>Please see the paper for full details: <a href="https://people.ucsc.edu/~adammb/">Millard-Ball, Adam</a>; <a href="https://www.linkedin.com/in/garima-desai-582026125/">Desai, Garima</a>; and <a href="https://www.linkedin.com/in/jesse-fahrney-208929190">Fahrney, Jessica</a> (2021). <a href="https://jpe.sagepub.com">"Diversifying Planning Education through Course Readings."</a> <em>Journal of Planning Education and Research</em>, in press</li>
+      <li><a href="https://github.com/amillb/syllabus_diversity">Download the code here</a></li>
+      <li>If you have any problems, please contact <a href="https://people.ucsc.edu/~adammb/">Adam Millard-Ball</a>, Department of Urban Planning, UCLA.</li>
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+              });
+            }
+            </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<html>
+    <link rel="stylesheet" type="text/css" href="/static/styles.css"/>
+    <head>
+        <title>Results</title>
+    </head>
+    <body>
+        <h1>Results: Estimated demographics of assigned authors</h1>
+        <li>Gender estimates are based on the <a href="https://github.com/lead-ratings/gender-guesser">gender_guesser</a> package.</a></li> 
+        <li>Race/ethnicity estimates are based on the <a href="https://ethnicolr.readthedocs.io">ethnicolr</a> package.</li>
+        <li>Note that the estimates for race/ethnicity are probabilistic, i.e. the probability that an author falls into a given category. This works best with large numbers of authors.</li>
+
+        <table border="1" class="dataframe mystyle">
+        <thead>
+        <tr style="text-align: center;">
+            <th>Course</th>
+            <th>Number of authors</th>
+            <th>Female</th>
+            <th>Asian</th>
+            <th>Non-Hispanic Black</th>
+            <th>Hispanic/ Latinx</th>
+            <th>Non-Hispanic White</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for trow in trows %}
+            <tr>
+                <td> {{trow[0]}} </td>
+                <td> {{trow[1]}} </td>
+                {% for tt in trow[2:] %}
+                <td>{{tt}}%</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+        <li></li>
+        <h1>Questions? Comments?</h2>
+        <li>Please see the paper for full details: <a href="https://people.ucsc.edu/~adammb/">Millard-Ball, Adam</a>; <a href="https://www.linkedin.com/in/garima-desai-582026125/">Desai, Garima</a>; and <a href="https://www.linkedin.com/in/jesse-fahrney-208929190">Fahrney, Jessica</a> (2021). <a href="https://jpe.sagepub.com">"Diversifying Planning Education through Course Readings."</a> <em>Journal of Planning Education and Research</em>, in press</li>
+        <li><a href="https://github.com/amillb/syllabus_diversity">Download the code here</a></li>
+        <li>If you have any problems, please contact <a href="https://people.ucsc.edu/~adammb/">Adam Millard-Ball</a>, Department of Urban Planning, UCLA.</li>
+        <li><a href="/home">Back to the home page</a></li>
+    </body>
+</html>
