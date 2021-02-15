@@ -7,6 +7,8 @@ For details of the methodology and results for urban sustainability courses, see
 
 Millard-Ball, Adam; Desai, Garima; and Fahrney, Jessica (2021). ["Diversifying Planning Education through Course Readings."](https://jpe.sagepub.com) *Journal of Planning Education and Research*, in press.
 
+You can also run the tool online at [www.syllabusdiversity.org](www.syllabusdiversity.org).
+
 # How to install
 Python 3.7 is required, along with the following Python packages. More recent versions may also work, but have not been tested. 
 
