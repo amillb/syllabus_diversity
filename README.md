@@ -5,7 +5,7 @@ It takes a list of assigned readings, and estimates the proportions of authors b
 
 For details of the methodology and results for urban sustainability courses, see:
 
-Millard-Ball, Adam; Desai, Garima; and Fahrney, Jessica (2021). ["Diversifying Planning Education through Course Readings."](https://jpe.sagepub.com) *Journal of Planning Education and Research*, in press.
+Millard-Ball, Adam; Desai, Garima; and Fahrney, Jessica (2021). ["Diversifying Planning Education through Course Readings."](https://doi.org/10.1177%2F0739456X211001936) *Journal of Planning Education and Research*, in press.
 
 You can also run the tool online at [www.syllabusdiversity.org](https://www.syllabusdiversity.org).
 
