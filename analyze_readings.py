@@ -90,8 +90,14 @@ class syllabusAnalyzer():
         d = gender.Detector()
         nameDf['gender'] = nameDf.firstname.apply(lambda x: d.get_gender(x))
         nameDf['female'] = nameDf.gender.apply(lambda x: 1 if x in ['female','mostly_female'] else 0 if x in ['male','mostly_female'] else np.nan)
+        
+        
         # add race
-        nameDf = ethnicolr.pred_fl_reg_name(nameDf,'lastname','firstname')
+        #ethnicolr can't handle a multiindex, so reset index and then readd it
+        nameDf = ethnicolr.pred_fl_reg_name(nameDf.reset_index(),'lastname','firstname')
+        nameDf.set_index(['courseid','readingid'], inplace=True)
+        # change with v 0.8
+        nameDf.rename(columns={cc+'_mean': cc.replace(cc+'_mean','') for cc in ['asian','hispanic','nh_black','nh_white']}, inplace=True)
 
         # Aggregate to article level
 

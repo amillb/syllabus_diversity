@@ -1,0 +1,39 @@
+Steps to run on Google Cloud
+See https://medium.com/@dmahugh_70618/deploying-a-flask-app-to-google-app-engine-faa883b5ffab
+
+1. Download Google Cloud SDK: https://cloud.google.com/sdk/docs/quickstart
+(I put it in Applications.) Skip Step B. Log in as directed.
+
+If it times out, change the default browser to Chrome in System Preferences
+
+2. Create a new project. This will then exit you from cloud.
+
+3. Install app engine: 
+./google-cloud-sdk/bin/gcloud components install app-engine-python
+
+4. Set project as default:
+./google-cloud-sdk/bin/gcloud config set project syllabusdiversity [or amb-projects]
+
+
+5. Enable billing: https://cloud.google.com/billing/docs/how-to/modify-project
+Also set a budget alert
+
+6. Enable API
+./google-cloud-sdk/bin/gcloud services enable cloudbuild.googleapis.com
+
+7. Upload files:
+Navigate to the project folder
+/Applications/google-cloud-sdk/bin/gcloud  app deploy
+
+8. If there are errors, look at the logs:
+See link here: https://cloud.google.com/endpoints/docs/openapi/troubleshoot-response-errors
+
+9. Add custom domain:
+https://cloud.google.com/appengine/docs/standard/python/mapping-custom-domains 
+
+10. To temporarily disable, go to https://console.cloud.google.com/appengine/settings and click Disable
+
+
+
+
+

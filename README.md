@@ -5,25 +5,29 @@ It takes a list of assigned readings, and estimates the proportions of authors b
 
 For details of the methodology and results for urban sustainability courses, see:
 
-Millard-Ball, Adam; Desai, Garima; and Fahrney, Jessica (2021). ["Diversifying Planning Education through Course Readings."](https://doi.org/10.1177%2F0739456X211001936) *Journal of Planning Education and Research*, in press.
+Millard-Ball, Adam; Desai, Garima; and Fahrney, Jessica (2022). ["Diversifying Planning Education through Course Readings."](https://doi.org/10.1177%2F0739456X211001936) *Journal of Planning Education and Research*, in press.
+
+Note that the estimates in the published paper use ethnicolr 0.4.0. This current version uses 0.8.1, with slightly different results.
 
 You can also run the tool online at [www.syllabusdiversity.org](https://www.syllabusdiversity.org).
 
 # How to install
-Python 3.7 is required, along with the following Python packages. More recent versions may also work, but have not been tested. 
+Python 3.8 is required, along with the following Python packages. Other versions may also work, but have not been tested. 
 
 ```
-numpy 1.16.4
-pandas 1.0.3
-ethnicolr 0.4.0
+numpy 1.19.2
+pandas 1.3.5
+ethnicolr 0.8.1
 gender_guesser 0.4.0
+Flask 2.0.3
+h5py 3.1.0
+Keras 2.2.4
+tensorflow 2.5.2
 ```
 
 Install them with:
 
-`pip install numpy pandas ethnicolr gender_guesser`
-
-Note that `ethnicolr` does not currently (Dec 2020) support Python 3.8. [See here for the latest.](https://github.com/appeler/ethnicolr/issues/29)
+`pip install numpy==1.19.2 pandas==1.3.5 ethnicolr==0.8.1 gender_guesser==0.4.0 Flask==2.0.3 h5py==3.1.0 Keras==2.2.4 tensorflow==2.5.2`
 
 # Preparing your input file
 Prepare your file with the list of authors or assigned readings using one of the two provided templates: `template1.csv` or `template2.csv`. Both .csv and Excel (.xlsx) formats are accepted, but for Excel, only the first sheet will be used.
@@ -53,4 +57,4 @@ Summary statistics for each course will be displayed. If you include the optiona
 Note that the estimates for race/ethnicity are probabilistic, i.e. the probability that an author falls into a given category. This works best with large numbers of authors.
 
 # Questions?
-We would love to hear about how this tool is being used. If you have any problems, please contact [Adam Millard-Ball](https://people.ucsc.edu/~adammb/) or open a GitHub issue.
+We would love to hear about how this tool is being used. If you have any problems, please contact [Adam Millard-Ball](https://millardball.its.ucla.edu) or open a GitHub issue.
