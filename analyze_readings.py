@@ -4,9 +4,9 @@
 """
 Estimate race and gender for readings in course syllabi
 For details, see:
-Millard-Ball, Adam; Desai, Garima; and Fahrney, Jessica (2021). "Diversifying Planning Education through Course Readings." 
-Journal of Planning Education and Research.
-https://jpe.sagepub.com
+Millard-Ball, Adam; Desai, Garima; and Fahrney, Jessica (2024). "Diversifying Planning Education through Course Readings." 
+Journal of Planning Education and Research, 44(2): 527-534.
+https://doi.org/10.1177/0739456X211001936
 
 December 2020
 """
