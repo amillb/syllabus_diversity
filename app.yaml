@@ -1,0 +1,20 @@
+runtime: python311
+entrypoint: python main.py
+resources:
+  cpu: 1
+  memory_gb: 2.3
+
+instance_class: F4_1G
+
+handlers:
+# The following is with help from Gemini
+# 1. Static Handler for the root URL
+# This ensures the page is served as a static file for initial GET requests.
+- url: /
+  static_files: templates/home.html
+  upload: templates/home.html
+  expiration: 1d 
+
+# 2. Dynamic Handler for all other requests (like POST to /)
+- url: /.*
+  script: auto

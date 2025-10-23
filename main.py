@@ -28,8 +28,7 @@ def download(filename):
     return send_from_directory(directory=app.config['CSVTEMPLATES_FOLDER'], filename=filename)
 
 # from https://flask.palletsprojects.com/en/1.1.x/patterns/fileuploads/
-@app.route('/', methods=['GET', 'POST'])
-@app.route('/home', methods=['GET', 'POST'])
+@app.route('/upload', methods=['POST'])
 def upload_file():
     if request.method == 'POST':       
         # check if the post request has the file part
@@ -73,4 +72,5 @@ if __name__ == '__main__':
     # the "static" directory. See:
     # http://flask.pocoo.org/docs/1.0/quickstart/#static-files. Once deployed,
     # App Engine itself will serve those files as configured in app.yaml.
-    app.run(host='127.0.0.1', port=5000, debug=False)
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port, debug=False)

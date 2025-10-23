@@ -108,7 +108,7 @@ class syllabusAnalyzer():
             outDf = pd.DataFrame(index = self.df.set_index(['courseid','readingid']).index.unique())
 
         outDf['N_authors'] = nameDf.groupby(level=[0,1]).size()
-        outDf.N_authors.fillna(0, inplace=True)
+        outDf.fillna({'N_authors': 0}, inplace=True)
         outDf['pc_female'] = nameDf.groupby(level=[0,1]).female.mean()
         outDf = outDf.join(nameDf.groupby(level=[0,1])[['asian','hispanic','nh_black','nh_white']].mean())
 

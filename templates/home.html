@@ -1,5 +1,5 @@
 <html>
-    <link rel="stylesheet" type="text/css" href="/static/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/styles.css"/>
     <head>
         <title>Syllabus Analyzer</title>
     </head>
@@ -25,7 +25,7 @@
             You can use one of the two provided templates: <a href="https://docs.google.com/uc?export=download&id=1RtKvT67ezinYsEpXKTBVwS0q2hJEH3df" target="_blank" rel="noopener noreferrer">template1.csv</a> or <a href="https://docs.google.com/uc?export=download&id=18Rw_5E2iVkRQBxDiZM_nxEB8bDmZnnav" target="_blank" rel="noopener noreferrer">template2.csv</a>.</li>
         <li>This website does not retain any information that you upload.</li> 
 
-        <button type="button" class="collapsible">&#x25BC; Detailed instructions</button>
+        <button type="button" class="collapsible">&#x25BC; Detailed instructions (expand to view)</button>
         <div class="content">
 
             <li>Authors' names must be comma-separated, e.g. Obama, Barack. Authors without a comma will be ignored as they are assumed to be an institutional author (e.g. United Nations).</li> 
@@ -46,14 +46,16 @@
 
         <h2 style="text-align:center; font-size: 150%; font-weight: bold">Upload your file</h2>
         <li></li>
-    <form style="text-align:center" method=post action="" enctype=multipart/form-data>
+    <form style="text-align:center" method=post action="/upload" enctype=multipart/form-data>
       <input type=file name=file accept=".csv,.xls,.xlsx">
       <input type=submit value=Upload>
     </form>
 
-    {% if upload_error %}
-    <error><b>Error in file upload! Please check the format of your uploaded file and try again.</b></error>
-    {% endif %}
+    <div id="upload-error-message" style="display: none;">
+    <error><b>Error in file upload! Please check the format of your uploaded file and try again. Expand the Detailed Instructions for more.</b></error>
+    </div>
+
+  
     <li></li>
     <h1>Questions? Comments?</h2>
       <li>Please see the paper for full details: <a href="https://people.ucsc.edu/~adammb/">Millard-Ball, Adam</a>; <a href="https://www.linkedin.com/in/garima-desai-582026125/">Desai, Garima</a>; and <a href="https://www.linkedin.com/in/jesse-fahrney-208929190">Fahrney, Jessica</a> (2024). <a href="https://doi.org/10.1177%2F0739456X211001936">"Diversifying Planning Education through Course Readings."</a> <em>Journal of Planning Education and Research</em>, 44(2): 527-534</li>
@@ -76,6 +78,19 @@
               });
             }
             </script>
+        <script>
+            // 1. Get the URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // 2. Check if the 'upload_error' parameter is set to 'True'
+            if (urlParams.get('upload_error') === 'True') {
+                // 3. Find the hidden div and show it
+                const errorDiv = document.getElementById('upload-error-message');
+                if (errorDiv) {
+                    errorDiv.style.display = 'block';
+                }
+            }
+        </script>
 </body>
 
 </html>
