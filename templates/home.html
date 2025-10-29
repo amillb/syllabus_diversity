@@ -1,5 +1,6 @@
 <html>
     <link rel="stylesheet" type="text/css" href="../static/styles.css"/>
+    <link rel="stylesheet" href="static/styles.css">
     <head>
         <title>Syllabus Analyzer</title>
     </head>
@@ -46,7 +47,7 @@
 
         <h2 style="text-align:center; font-size: 150%; font-weight: bold">Upload your file</h2>
         <li></li>
-    <form style="text-align:center" method=post action="/upload" enctype=multipart/form-data>
+    <form style="text-align:center" method=post action="https://amb-projects.uc.r.appspot.com/upload" enctype=multipart/form-data>
       <input type=file name=file accept=".csv,.xls,.xlsx">
       <input type=submit value=Upload>
     </form>

@@ -28,12 +28,10 @@ Navigate to the project folder
 8. If there are errors, look at the logs:
 See link here: https://cloud.google.com/endpoints/docs/openapi/troubleshoot-response-errors
 
-9. Add custom domain:
+9. Add custom domain: NOTE: this is superseded, now directs to ITS server
 https://cloud.google.com/appengine/docs/standard/python/mapping-custom-domains 
 
 10. To temporarily disable, go to https://console.cloud.google.com/appengine/settings and click Disable
 
-
-
-
+11. UPDATE: home.html is now on the UCLA ITS server in order to avoid spinning up instances
 

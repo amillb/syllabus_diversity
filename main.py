@@ -18,10 +18,10 @@ ALLOWED_EXTENSIONS = {'csv', 'xls', 'xlsx'}
 app.config['CSVTEMPLATES_FOLDER'] = CSVTEMPLATES_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024  # 1 MB limit
 
-@app.route('/')
-@app.route('/home')
-def home(error=None):
-    return render_template('home.html', upload_error=request.args.get('upload_error'))
+#@app.route('/')
+#@app.route('/home')
+#def home(error=None):
+#    return render_template('home.html', upload_error=request.args.get('upload_error'))
 
 @app.route('/csv_templates/<path:filename>', methods=['GET', 'POST'])
 def download(filename):
